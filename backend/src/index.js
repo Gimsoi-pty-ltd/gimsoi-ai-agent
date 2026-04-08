@@ -17,3 +17,5 @@ app.get('/ai/sprint-summary', rbacMiddleware, async (req, res) => {
 
 const PORT = process.env.PORT || 3400;
 app.listen(PORT, () => console.log(`GIMSOI Backend running on port ${PORT}`));
+
+// this app works
