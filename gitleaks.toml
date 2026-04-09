@@ -1,0 +1,18 @@
+[allowlist]
+description = "Ignore standard dev files"
+paths = [
+    '''node_modules''',
+    '''package-lock.json''',
+    '''\.env\.example$'''
+]
+
+[[rules]]
+description = "Block all .env files"
+id = "env-file-block"
+regex = '''(?i)\.env(\..+)?$'''
+path = '''\.env(\..+)?$'''
+
+[[rules]]
+description = "Detect Generic Secrets"
+id = "generic-secret"
+regex = '''(?i)(api_key|secret|password|token)[-|_| ]*[:|=][-|_| ]*([a-z0-9-|_]{16,})'''
