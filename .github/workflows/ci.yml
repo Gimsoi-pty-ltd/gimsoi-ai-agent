@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   gitleaks:
-    name: 🔐 Scan for Secrets
+    name:  Scan for Secrets
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   backend:
-    name: 🏗️ Backend
+    name: Backend
     runs-on: ubuntu-latest
     needs: gitleaks
     defaults:
@@ -41,7 +41,7 @@ jobs:
       - run: npm run build || true
 
   frontend:
-    name: 🎨 Frontend
+    name: Frontend
     runs-on: ubuntu-latest
     needs: gitleaks
     steps:
@@ -56,7 +56,7 @@ jobs:
       - run: npm run build || true
 
   done:
-    name: ✅ Done
+    name: Done
     runs-on: ubuntu-latest
     needs: [gitleaks, backend, frontend]
     if: always()
