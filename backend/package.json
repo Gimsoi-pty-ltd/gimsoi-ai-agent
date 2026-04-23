@@ -1,24 +1,36 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Gimsoi AI Agent Backend Service",
+  "main": "src/index.js",   
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",   
+    "dev": "nodemon src/index.js",  
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prisma:generate": "npx prisma generate", 
+    "prisma:migrate:deploy": "npx prisma migrate deploy" 
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["ai", "gimsoi", "firebase", "backend", "express", "prisma", "postgresql"],
+  "author": "Modise",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "@genkit-ai/ai": "^1.31.0",
     "@genkit-ai/googleai": "^1.28.0",
+    "@prisma/client": "^5.x.x",
+    "cors": "^2.8.5",
     "dotenv": "^17.4.1",
-    "express": "^5.2.1",
+    "express": "^4.18.2",
+    "firebase-admin": "^12.x.x",
+    "joi": "^17.x.x",
     "pg": "^8.20.0",
+    "prisma": "^5.x.x",
     "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
